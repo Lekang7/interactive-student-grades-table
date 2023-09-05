@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    text-align: center;
+}
+th, td
+    {
+    padding: 10px;
+    border: 1px solid black;
+}
+tr:nth-child(even)
+    {
+    background-color:lightgrey;
+}
+    
+h1{
+    text-align: center;
+}
+thead{
+    background-color: grey;
+}
+td[data-type="grade"]
+{
+    font-weight:bold;
+}
