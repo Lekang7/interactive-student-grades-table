@@ -1,1 +1,84 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assignment03.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assignment03.js" defer></script>
+</head>
+<body>
+    <h1>Student Grades Table</h1>
+    <table id="grades-table">
+        <thead>
+          <tr>
+            <!---Table Heading-->
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Assignment 1</th>
+            <th>Assignment 2</th>
+            <th>Assignment 3</th>
+            <th>Assignment 4</th>
+            <th>Assignment 5</th>
+            <th>Average (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!---Table Rows-->
+          <tr class="student-row">
+              <td contenteditable="true" class="name-input">Joe Bloggs</td>
+              <td contenteditable="true" class="id-input">123456789</td>
+              <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">85</td>
+              <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+              <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+              <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+              <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">85</td>
+              <td data-type="average"><span class="average"></span></td>
+          </tr>
+          <tr class="student-row">
+            <td contenteditable="true" class="name-input">Jim Bloggs</td>
+            <td contenteditable="true" class="id-input"> 987564321</td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100">-</td>
+            <td data-type="average"><span class="average"></span></td>
+          </tr>
+          <tr class="student-row">
+            <td contenteditable="true" class="name-input"></td>
+            <td contenteditable="true" class="id-input"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td data-type="average"><span class="average"></span></td>
+          </tr>
+          <tr class="student-row">
+            <td contenteditable="true" class="name-input"></td>
+            <td contenteditable="true" class="id-input"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td contenteditable="true" class="grade-input" data-type="grade" min="0" max="100"></td>
+            <td data-type="average"><span class="average"></span></td>
+          </tr>
+        </tbody>      
+    </table>
+    <!---Table Buttons-->
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addColumn()">Add Column</button>
+    <button id = "start">Count Unsubmitted</button>
+    <button id="save-table">Save Table</button>
+    <button id="load-table">Load Saved Table</button>
+
+    <p>Number of Unsubmitted Assignments: <span id = "num">0</span></p>
+    <label for="grade-toggle">Choose grade presentation:</label>
+      <select id="grade-toggle">
+        <option value="percent">Average [%]</option>
+        <option value="letter">Average [Letter]</option>
+        <option value="four-point">Average [4.0]</option>
+      </select>
+</body>
+</html>
+
